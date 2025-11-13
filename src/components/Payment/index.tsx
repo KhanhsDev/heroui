@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import { Button } from "@heroui/button";
+import { useState } from 'react';
+import Image from 'next/image';
+import { Button } from '@heroui/button';
 
-import PackageIcon from "@/svg/PackageIcon";
-import CalendarIcon from "@/svg/CalendarIcon";
-import HelpIcon from "@/svg/HelpIcon";
+import PackageIcon from '@/assets/svg/PackageIcon';
+import CalendarIcon from '@/assets/svg/CalendarIcon';
+import HelpIcon from '@/assets/svg/HelpIcon';
 
-type PaymentMethod = "vnpay-wallet" | "vnpay-qr" | "atm" | "credit-card";
+type PaymentMethod = 'vnpay-wallet' | 'vnpay-qr' | 'atm' | 'credit-card';
 
 type Props = {
   planName?: string;
@@ -18,22 +18,22 @@ type Props = {
 };
 
 export default function Payment({
-  planName = "Gói tiêu chuẩn",
-  billingCycle = "6 tháng",
-  totalAmount = "12,000,000",
+  planName = 'Gói tiêu chuẩn',
+  billingCycle = '6 tháng',
+  totalAmount = '12,000,000',
   onClose,
 }: Props) {
   const [paymentMethod, setPaymentMethod] =
-    useState<PaymentMethod>("credit-card");
-  const [selectedBank, setSelectedBank] = useState<string>("");
-  const [cardNumber, setCardNumber] = useState<string>("");
-  const [expiryDate, setExpiryDate] = useState<string>("");
-  const [cvv, setCvv] = useState<string>("");
+    useState<PaymentMethod>('credit-card');
+  const [selectedBank, setSelectedBank] = useState<string>('');
+  const [cardNumber, setCardNumber] = useState<string>('');
+  const [expiryDate, setExpiryDate] = useState<string>('');
+  const [cvv, setCvv] = useState<string>('');
 
   const paymentMethods = [
     {
-      id: "vnpay-wallet" as PaymentMethod,
-      label: "Ví điện tử VNPAY",
+      id: 'vnpay-wallet' as PaymentMethod,
+      label: 'Ví điện tử VNPAY',
       icon: (
         <div className="relative size-[2.7rem] rounded-[0.8rem] overflow-hidden opacity-40">
           <Image
@@ -46,8 +46,8 @@ export default function Payment({
       ),
     },
     {
-      id: "vnpay-qr" as PaymentMethod,
-      label: "VNPAY - QR",
+      id: 'vnpay-qr' as PaymentMethod,
+      label: 'VNPAY - QR',
       icon: (
         <div className="relative size-[2.7rem] rounded-[0.8rem] overflow-hidden opacity-40">
           <Image
@@ -60,8 +60,8 @@ export default function Payment({
       ),
     },
     {
-      id: "atm" as PaymentMethod,
-      label: "Thẻ ATM nội địa",
+      id: 'atm' as PaymentMethod,
+      label: 'Thẻ ATM nội địa',
       icon: (
         <div className="bg-white size-[2.7rem] rounded-[0.8rem] flex items-center justify-center opacity-40 p-[0.8rem]">
           <svg
@@ -82,8 +82,8 @@ export default function Payment({
       ),
     },
     {
-      id: "credit-card" as PaymentMethod,
-      label: "Thẻ tín dụng",
+      id: 'credit-card' as PaymentMethod,
+      label: 'Thẻ tín dụng',
       icon: (
         <div className="bg-white size-[2.7rem] rounded-[0.8rem] overflow-hidden flex items-center justify-center">
           <Image
@@ -99,20 +99,20 @@ export default function Payment({
   ];
 
   const banks = [
-    { id: "bidv", name: "BIDV", image: "/assets/png/bidv.png" },
-    { id: "vietinbank", name: "VietinBank", image: "/assets/png/bidv.png" },
-    { id: "vpbank", name: "VPBank", image: "/assets/png/bidv.png" },
-    { id: "techcombank", name: "Techcombank", image: "/assets/png/bidv.png" },
-    { id: "shb", name: "SHB", image: "/assets/png/bidv.png" },
-    { id: "hdbank", name: "HDBank", image: "/assets/png/bidv.png" },
-    { id: "acb", name: "ACB", image: "/assets/png/bidv.png" },
-    { id: "mb", name: "MB", image: "/assets/png/bidv.png" },
-    { id: "vib", name: "VIB", image: "/assets/png/bidv.png" },
-    { id: "scb", name: "SCB", image: "/assets/png/bidv.png" },
-    { id: "sacombank", name: "Sacombank", image: "/assets/png/bidv.png" },
-    { id: "tpbank", name: "TPBank", image: "/assets/png/bidv.png" },
-    { id: "vib2", name: "VIB", image: "/assets/png/bidv.png" },
-    { id: "msb", name: "MSB", image: "/assets/png/bidv.png" },
+    { id: 'bidv', name: 'BIDV', image: '/assets/png/bidv.png' },
+    { id: 'vietinbank', name: 'VietinBank', image: '/assets/png/bidv.png' },
+    { id: 'vpbank', name: 'VPBank', image: '/assets/png/bidv.png' },
+    { id: 'techcombank', name: 'Techcombank', image: '/assets/png/bidv.png' },
+    { id: 'shb', name: 'SHB', image: '/assets/png/bidv.png' },
+    { id: 'hdbank', name: 'HDBank', image: '/assets/png/bidv.png' },
+    { id: 'acb', name: 'ACB', image: '/assets/png/bidv.png' },
+    { id: 'mb', name: 'MB', image: '/assets/png/bidv.png' },
+    { id: 'vib', name: 'VIB', image: '/assets/png/bidv.png' },
+    { id: 'scb', name: 'SCB', image: '/assets/png/bidv.png' },
+    { id: 'sacombank', name: 'Sacombank', image: '/assets/png/bidv.png' },
+    { id: 'tpbank', name: 'TPBank', image: '/assets/png/bidv.png' },
+    { id: 'vib2', name: 'VIB', image: '/assets/png/bidv.png' },
+    { id: 'msb', name: 'MSB', image: '/assets/png/bidv.png' },
   ];
 
   return (
@@ -172,7 +172,7 @@ export default function Payment({
         <div className="flex flex-col">
           {/* Payment Method Options */}
           <div className="flex gap-[2.4rem] mb-[3.2rem] flex-wrap">
-            {paymentMethods.map((method) => {
+            {paymentMethods.map(method => {
               const isSelected = paymentMethod === method.id;
 
               return (
@@ -186,8 +186,8 @@ export default function Payment({
                     <p
                       className={`text-[1.6rem] font-[500] leading-[1.4] ${
                         isSelected
-                          ? "text-[var(--text-primary)]"
-                          : "text-[var(--text-tertiary)]"
+                          ? 'text-[var(--text-primary)]'
+                          : 'text-[var(--text-tertiary)]'
                       }`}
                     >
                       {method.label}
@@ -196,8 +196,8 @@ export default function Payment({
                   <div
                     className={`size-[1.8rem] rounded-full flex items-center justify-center ${
                       isSelected
-                        ? "border-[0.2rem] border-[var(--brand-gradient-start)]"
-                        : "border-[0.2rem] border-[var(--text-tertiary)]"
+                        ? 'border-[0.2rem] border-[var(--brand-gradient-start)]'
+                        : 'border-[0.2rem] border-[var(--text-tertiary)]'
                     }`}
                   >
                     {isSelected && (
@@ -218,17 +218,17 @@ export default function Payment({
             {!selectedBank ? (
               /* Bank List - Step 1 */
               <div className="flex flex-wrap gap-[2.4rem]">
-                {banks.map((bank) => (
+                {banks.map(bank => (
                   <button
                     key={bank.id}
                     //TODO
                     onClick={() =>
-                      bank.id === "bidv" && setSelectedBank(bank.id)
+                      bank.id === 'bidv' && setSelectedBank(bank.id)
                     }
                     className={`bg-[var(--bg-secondary)] border-[0.06rem] border-[var(--border-bank)] rounded-[0.72rem] w-[10rem] h-[6.8rem] flex items-center justify-center ${
-                      bank.id === "bidv"
-                        ? "cursor-pointer"
-                        : "cursor-not-allowed opacity-40"
+                      bank.id === 'bidv'
+                        ? 'cursor-pointer'
+                        : 'cursor-not-allowed opacity-40'
                     }`}
                   >
                     <div className="relative w-[8.31rem] h-[5.36rem] bg-[var(--border-active)] rounded-[0.48rem] overflow-hidden flex justify-center items-center">
@@ -260,7 +260,7 @@ export default function Payment({
                     </div>
                   </div>
                   <button
-                    onClick={() => setSelectedBank("")}
+                    onClick={() => setSelectedBank('')}
                     className="text-[1.5rem] font-[400] leading-[1.4] text-[var(--text-primary)] underline cursor-pointer"
                   >
                     Thay đổi
@@ -277,7 +277,7 @@ export default function Payment({
                     <input
                       type="text"
                       value={cardNumber}
-                      onChange={(e) => setCardNumber(e.target.value)}
+                      onChange={e => setCardNumber(e.target.value)}
                       placeholder="AAA"
                       className="bg-transparent border-[0.1rem] border-[var(--border-secondary)] rounded-[1.2rem] h-[4.8rem] px-[1.6rem] text-[1.5rem] font-[400] leading-[1.4] text-[var(--text-primary)] focus:outline-none focus:border-[var(--border-active)]"
                     />
@@ -294,11 +294,11 @@ export default function Payment({
                         <input
                           type="text"
                           value={expiryDate}
-                          onChange={(e) => {
+                          onChange={e => {
                             const input = e.target.value;
 
                             // Remove all non-numeric characters
-                            const numericOnly = input.replace(/\D/g, "");
+                            const numericOnly = input.replace(/\D/g, '');
 
                             // Validate first digit (only 0 or 1)
                             if (numericOnly.length >= 1) {
@@ -323,7 +323,7 @@ export default function Payment({
                             let formatted = limited;
                             if (limited.length >= 3) {
                               formatted =
-                                limited.slice(0, 2) + "/" + limited.slice(2);
+                                limited.slice(0, 2) + '/' + limited.slice(2);
                             }
 
                             setExpiryDate(formatted);
@@ -347,11 +347,11 @@ export default function Payment({
                         <input
                           type="text"
                           value={cvv}
-                          onChange={(e) => {
+                          onChange={e => {
                             const input = e.target.value;
 
                             // Remove all non-numeric characters
-                            const numericOnly = input.replace(/\D/g, "");
+                            const numericOnly = input.replace(/\D/g, '');
 
                             // Limit to 3 digits
                             const limited = numericOnly.slice(0, 3);
@@ -390,8 +390,8 @@ export default function Payment({
           <Button
             onPress={() => {
               // Handle payment
-              console.log("Payment method:", paymentMethod);
-              console.log("Selected bank:", selectedBank);
+              console.log('Payment method:', paymentMethod);
+              console.log('Selected bank:', selectedBank);
             }}
             className="bg-gradient-to-b from-[var(--brand-gradient-start)] to-[var(--brand-gradient-end)] rounded-[1.6rem] h-[4.8rem] w-[21.1rem] shadow-[0px_2px_8.3px_0px_rgba(14,175,116,0.2)] p-[1rem]"
           >
@@ -401,14 +401,14 @@ export default function Payment({
           </Button>
           <p className="text-[1.5rem] font-[400] leading-[1.4] text-[var(--text-tertiary)] text-right w-[68.7rem]">
             Nhấn "<span className="text-[var(--text-primary)]">Mua</span>" đồng
-            nghĩa với việc bạn đồng ý tuân theo{" "}
+            nghĩa với việc bạn đồng ý tuân theo{' '}
             <span className="text-[var(--text-primary)] underline">
               Điều kiện
-            </span>{" "}
-            và{" "}
+            </span>{' '}
+            và{' '}
             <span className="text-[var(--text-primary)] underline">
               Điều khoản
-            </span>{" "}
+            </span>{' '}
             của Wisetrade
           </p>
         </div>

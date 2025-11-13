@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { Modal, ModalContent, ModalBody } from "@heroui/modal";
-import { Button } from "@heroui/button";
-import TrashIcon from "@/svg/TrashIcon";
+import { Modal, ModalContent, ModalBody } from '@heroui/modal';
+import { Button } from '@heroui/button';
+import TrashIcon from '@/assets/svg/TrashIcon';
 
 interface DeleteConfirmModalProps {
   isOpen: boolean;
@@ -22,11 +22,11 @@ export default function DeleteConfirmModal({
       placement="center"
       hideCloseButton
       classNames={{
-        base: "rounded-[2rem]",
-        backdrop: "bg-black/80",
+        base: 'rounded-[2rem]',
+        backdrop: 'bg-black/80',
       }}
       style={{
-        background: "var(--bg-gradient-modal)",
+        background: 'var(--bg-gradient-modal)',
       }}
     >
       <ModalContent className="max-w-[38.9rem]">
@@ -64,7 +64,7 @@ export default function DeleteConfirmModal({
               onPress={onConfirm}
               className="flex-1 h-[4rem] rounded-[1.2rem] text-[1.5rem] font-[600] leading-[1.4] text-[var(--text-primary)] shadow-[0px_2px_8.3px_0px_rgba(14,175,116,0.2)]"
               style={{
-                background: "var(--bg-gradient-confirm-btn)",
+                background: 'var(--bg-gradient-confirm-btn)',
               }}
             >
               Xác nhận

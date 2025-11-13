@@ -4,9 +4,9 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import SearchIcon from '@/svg/SearchIcon';
-import MoonIcon from '@/svg/MoonIcon';
-import BellIcon from '@/svg/BellIcon';
+import SearchIcon from '@/assets/svg/SearchIcon';
+import MoonIcon from '@/assets/svg/MoonIcon';
+import BellIcon from '@/assets/svg/BellIcon';
 import Profile from '@/components/Profile';
 import Sidebar from '../Sidebar';
 

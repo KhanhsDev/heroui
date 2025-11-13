@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import { Button } from "@heroui/button";
-import Extend from "@/svg/Extend";
+import { useState } from 'react';
+import Image from 'next/image';
+import { Button } from '@heroui/button';
+import Extend from '@/assets/svg/Extend';
 
 type Props = {
   onRenewClick: () => void;
@@ -11,8 +11,8 @@ type Props = {
 
 export default function UpdatePackage({ onRenewClick }: Props) {
   // TODO: Sẽ lấy từ API hoặc store sau
-  const [planName] = useState("Gói tiêu chuẩn");
-  const [expiryDate] = useState("13:02:24 23/09/2025");
+  const [planName] = useState('Gói tiêu chuẩn');
+  const [expiryDate] = useState('13:02:24 23/09/2025');
 
   return (
     <div className="w-full h-[27rem] rounded-[1.6rem] overflow-hidden relative">

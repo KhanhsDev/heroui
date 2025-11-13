@@ -1,9 +1,9 @@
-"use client";
-import React, { useState } from "react";
-import { useKeenSlider } from "keen-slider/react";
-import IndexItem from "./IndexItem";
-import ChevronRightIcon from "@/svg/ChevronRightIcon";
-import ChevronLeftIcon from "@/svg/ChevronLeftIcon";
+'use client';
+import React, { useState } from 'react';
+import { useKeenSlider } from 'keen-slider/react';
+import IndexItem from './IndexItem';
+import ChevronRightIcon from '@/assets/svg/ChevronRightIcon';
+import ChevronLeftIcon from '@/assets/svg/ChevronLeftIcon';
 
 const IndexInfo = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

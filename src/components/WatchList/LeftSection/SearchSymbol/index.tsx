@@ -1,7 +1,7 @@
-"use client";
-import React, { useState, useRef, useEffect } from "react";
-import PlusIcon from "@/svg/PlusIcon";
-import "./style.scss";
+'use client';
+import React, { useState, useRef, useEffect } from 'react';
+import PlusIcon from '@/assets/svg/PlusIcon';
+import './style.scss';
 
 interface Stock {
   symbol: string;
@@ -13,7 +13,7 @@ interface SearchSymbolProps {
 }
 
 const SearchSymbol = ({ onStockSelect }: SearchSymbolProps) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [isInputMode, setIsInputMode] = useState(false);
   const [filteredStocks, setFilteredStocks] = useState<Stock[]>([]);
@@ -22,47 +22,47 @@ const SearchSymbol = ({ onStockSelect }: SearchSymbolProps) => {
 
   // Fake data - 20 mã cổ phiếu
   const stockList: Stock[] = [
-    { symbol: "AAA", name: "Công ty cổ phần Nhựa An Phát Xanh" },
-    { symbol: "AAM", name: "Công ty cổ phần Thủy sản Mekong" },
-    { symbol: "AAT", name: "Công ty cổ phần Tập đoàn Tiên Sơn" },
-    { symbol: "ACB", name: "Ngân hàng TMCP Á Châu" },
+    { symbol: 'AAA', name: 'Công ty cổ phần Nhựa An Phát Xanh' },
+    { symbol: 'AAM', name: 'Công ty cổ phần Thủy sản Mekong' },
+    { symbol: 'AAT', name: 'Công ty cổ phần Tập đoàn Tiên Sơn' },
+    { symbol: 'ACB', name: 'Ngân hàng TMCP Á Châu' },
     {
-      symbol: "ACL",
-      name: "Công ty cổ phần Xuất nhập khẩu Thủy sản Cửu Long An Giang",
+      symbol: 'ACL',
+      name: 'Công ty cổ phần Xuất nhập khẩu Thủy sản Cửu Long An Giang',
     },
     {
-      symbol: "AGG",
-      name: "Công ty cổ phần Đầu tư và Phát triển Bất động sản An Gia",
+      symbol: 'AGG',
+      name: 'Công ty cổ phần Đầu tư và Phát triển Bất động sản An Gia',
     },
     {
-      symbol: "BCM",
-      name: "Tổng Công ty Đầu tư và Phát triển Công nghiệp - CTCP",
+      symbol: 'BCM',
+      name: 'Tổng Công ty Đầu tư và Phát triển Công nghiệp - CTCP',
     },
-    { symbol: "BID", name: "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam" },
-    { symbol: "BVH", name: "Tập đoàn Bảo Việt" },
-    { symbol: "CTG", name: "Ngân hàng TMCP Công Thương Việt Nam" },
-    { symbol: "FPT", name: "Công ty cổ phần FPT" },
-    { symbol: "GAS", name: "Tổng Công ty Khí Việt Nam - CTCP" },
+    { symbol: 'BID', name: 'Ngân hàng TMCP Đầu tư và Phát triển Việt Nam' },
+    { symbol: 'BVH', name: 'Tập đoàn Bảo Việt' },
+    { symbol: 'CTG', name: 'Ngân hàng TMCP Công Thương Việt Nam' },
+    { symbol: 'FPT', name: 'Công ty cổ phần FPT' },
+    { symbol: 'GAS', name: 'Tổng Công ty Khí Việt Nam - CTCP' },
     {
-      symbol: "GMD",
-      name: "Công ty cổ phần Đầu tư Phát triển Nhà Đô Thị Gemadept",
+      symbol: 'GMD',
+      name: 'Công ty cổ phần Đầu tư Phát triển Nhà Đô Thị Gemadept',
     },
-    { symbol: "HPG", name: "Công ty cổ phần Tập đoàn Hòa Phát" },
-    { symbol: "MBB", name: "Ngân hàng TMCP Quân đội" },
-    { symbol: "MSN", name: "Công ty cổ phần Tập đoàn Masan" },
-    { symbol: "MWG", name: "Công ty cổ phần Đầu tư Thế Giới Di Động" },
-    { symbol: "PLX", name: "Tập đoàn Xăng dầu Việt Nam" },
-    { symbol: "VCB", name: "Ngân hàng TMCP Ngoại Thương Việt Nam" },
-    { symbol: "VHM", name: "Công ty cổ phần Vinhomes" },
+    { symbol: 'HPG', name: 'Công ty cổ phần Tập đoàn Hòa Phát' },
+    { symbol: 'MBB', name: 'Ngân hàng TMCP Quân đội' },
+    { symbol: 'MSN', name: 'Công ty cổ phần Tập đoàn Masan' },
+    { symbol: 'MWG', name: 'Công ty cổ phần Đầu tư Thế Giới Di Động' },
+    { symbol: 'PLX', name: 'Tập đoàn Xăng dầu Việt Nam' },
+    { symbol: 'VCB', name: 'Ngân hàng TMCP Ngoại Thương Việt Nam' },
+    { symbol: 'VHM', name: 'Công ty cổ phần Vinhomes' },
   ];
 
   // Filter stocks based on search term
   useEffect(() => {
     if (searchTerm.trim()) {
       const filtered = stockList.filter(
-        (stock) =>
+        stock =>
           stock.symbol.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          stock.name.toLowerCase().includes(searchTerm.toLowerCase())
+          stock.name.toLowerCase().includes(searchTerm.toLowerCase()),
       );
       setFilteredStocks(filtered);
     } else {
@@ -80,12 +80,12 @@ const SearchSymbol = ({ onStockSelect }: SearchSymbolProps) => {
       ) {
         setIsOpen(false);
         setIsInputMode(false);
-        setSearchTerm("");
+        setSearchTerm('');
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   // Focus input when switching to input mode
@@ -96,14 +96,14 @@ const SearchSymbol = ({ onStockSelect }: SearchSymbolProps) => {
   }, [isInputMode]);
 
   const handleStockSelect = (stock: Stock) => {
-    console.log("Selected stock:", stock);
+    console.log('Selected stock:', stock);
 
     // Call parent callback if provided
     if (onStockSelect) {
       onStockSelect(stock);
     }
 
-    setSearchTerm("");
+    setSearchTerm('');
     setIsOpen(false);
     setIsInputMode(false);
   };
@@ -134,7 +134,7 @@ const SearchSymbol = ({ onStockSelect }: SearchSymbolProps) => {
       if (!searchRef.current?.contains(document.activeElement)) {
         setIsInputMode(false);
         setIsOpen(false);
-        setSearchTerm("");
+        setSearchTerm('');
       }
     }, 200);
   };
@@ -157,7 +157,7 @@ const SearchSymbol = ({ onStockSelect }: SearchSymbolProps) => {
               ref={inputRef}
               type="text"
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={e => setSearchTerm(e.target.value)}
               onFocus={handleInputFocus}
               onBlur={handleInputBlur}
               placeholder="Nhập mã chứng khoán"
@@ -169,11 +169,11 @@ const SearchSymbol = ({ onStockSelect }: SearchSymbolProps) => {
           {isOpen && filteredStocks.length > 0 && (
             <div className="search-dropdown">
               <div className="search-results">
-                {filteredStocks.map((stock) => (
+                {filteredStocks.map(stock => (
                   <div
                     key={stock.symbol}
                     className="search-item"
-                    onMouseDown={(e) => {
+                    onMouseDown={e => {
                       e.preventDefault();
                       handleStockSelect(stock);
                     }}

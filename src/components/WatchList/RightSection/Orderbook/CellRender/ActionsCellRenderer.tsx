@@ -1,17 +1,17 @@
-import { ICellRendererParams } from "ag-grid-community";
-import EditIcon from "@/svg/EditIcon";
-import TrashIcon from "@/svg/TrashIcon";
+import { ICellRendererParams } from 'ag-grid-community';
+import EditIcon from '@/assets/svg/EditIcon';
+import TrashIcon from '@/assets/svg/TrashIcon';
 
 const ActionsCellRenderer = (params: ICellRendererParams) => {
   if (!params.data) return <div />;
 
   const handleEdit = () => {
-    console.log("Edit order:", params.data);
+    console.log('Edit order:', params.data);
     // TODO: Implement edit functionality
   };
 
   const handleDelete = () => {
-    console.log("Delete order:", params.data);
+    console.log('Delete order:', params.data);
     // TODO: Implement delete functionality
   };
 

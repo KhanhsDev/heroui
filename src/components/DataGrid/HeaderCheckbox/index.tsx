@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import CheckBoxIcon from "@/svg/CheckBoxIcon";
-import UnCheckBoxIcon from "@/svg/UnCheckBoxIcon";
-import IndeterminateCheckBoxIcon from "@/svg/IndeterminateCheckBoxIcon";
-import type { IHeaderParams } from "ag-grid-community";
+import React, { useState, useEffect } from 'react';
+import CheckBoxIcon from '@/assets/svg/CheckBoxIcon';
+import UnCheckBoxIcon from '@/assets/svg/UnCheckBoxIcon';
+import IndeterminateCheckBoxIcon from '@/assets/svg/IndeterminateCheckBoxIcon';
+import type { IHeaderParams } from 'ag-grid-community';
 
 const HeaderCheckbox = (props: IHeaderParams) => {
   const [checked, setChecked] = useState(false);
@@ -11,7 +11,7 @@ const HeaderCheckbox = (props: IHeaderParams) => {
   const updateCheckboxState = () => {
     const selectedCount = props.api.getSelectedNodes().length;
     const selectableRows = [];
-    props.api.forEachNode((node) => {
+    props.api.forEachNode(node => {
       if (node.selectable) {
         selectableRows.push(node);
       }
@@ -30,10 +30,10 @@ const HeaderCheckbox = (props: IHeaderParams) => {
   };
 
   useEffect(() => {
-    props.api.addEventListener("selectionChanged", updateCheckboxState);
+    props.api.addEventListener('selectionChanged', updateCheckboxState);
     updateCheckboxState();
     return () => {
-      props.api.removeEventListener("selectionChanged", updateCheckboxState);
+      props.api.removeEventListener('selectionChanged', updateCheckboxState);
     };
   }, [props.api, updateCheckboxState]);
 

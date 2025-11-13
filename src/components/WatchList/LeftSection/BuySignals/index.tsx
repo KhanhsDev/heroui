@@ -1,10 +1,10 @@
-"use client";
-import React, { useRef } from "react";
-import { ColDef } from "ag-grid-community";
-import DataGrid, { DataGridHandle } from "@/components/DataGrid";
-import BuyCellRenderer from "@/components/TopPerformingStocks/BuyCellRenderer";
-import SearchIcon from "@/svg/SearchIcon";
-import "./style.scss";
+'use client';
+import React, { useRef } from 'react';
+import { ColDef } from 'ag-grid-community';
+import DataGrid, { DataGridHandle } from '@/components/DataGrid';
+import BuyCellRenderer from '@/components/TopPerformingStocks/BuyCellRenderer';
+import SearchIcon from '@/assets/svg/SearchIcon';
+import './style.scss';
 
 const BuySignals = () => {
   const gridRef = useRef<DataGridHandle | null>(null);
@@ -16,25 +16,25 @@ const BuySignals = () => {
 
   const columnDefs = useRef<Array<ColDef<any>>>([
     {
-      headerName: "Mã",
-      field: "symbol",
+      headerName: 'Mã',
+      field: 'symbol',
       flex: 1,
-      headerClass: "header text-left",
-      cellClass: "cell text-left",
+      headerClass: 'header text-left',
+      cellClass: 'cell text-left',
     },
     {
-      headerName: "Tín hiệu",
-      field: "signal",
+      headerName: 'Tín hiệu',
+      field: 'signal',
       flex: 1,
-      headerClass: "header text-left",
-      cellClass: "cell text-left",
+      headerClass: 'header text-left',
+      cellClass: 'cell text-left',
     },
     {
-      headerName: "Giá mua",
-      field: "buyPrice",
+      headerName: 'Giá mua',
+      field: 'buyPrice',
       flex: 1,
-      headerClass: "header text-left",
-      cellClass: "cell-custom",
+      headerClass: 'header text-left',
+      cellClass: 'cell-custom',
       cellRenderer: BuyCellRenderer,
     },
   ]);
@@ -51,34 +51,34 @@ const BuySignals = () => {
         // TODO: Replace with actual API call
         const rowData: any[] = [
           {
-            symbol: "AAA",
-            signal: "Mua",
-            buyRange: "33.7-33.8",
-            buyTime: "17:00 02/20/2025",
+            symbol: 'AAA',
+            signal: 'Mua',
+            buyRange: '33.7-33.8',
+            buyTime: '17:00 02/20/2025',
           },
           {
-            symbol: "BBB",
-            signal: "Mua",
-            buyRange: "45.5-46.0",
-            buyTime: "16:30 02/20/2025",
+            symbol: 'BBB',
+            signal: 'Mua',
+            buyRange: '45.5-46.0',
+            buyTime: '16:30 02/20/2025',
           },
           {
-            symbol: "CCC",
-            signal: "Mua",
-            buyRange: "28.2-28.5",
-            buyTime: "15:45 02/20/2025",
+            symbol: 'CCC',
+            signal: 'Mua',
+            buyRange: '28.2-28.5',
+            buyTime: '15:45 02/20/2025',
           },
           {
-            symbol: "DDD",
-            signal: "Mua",
-            buyRange: "52.0-52.5",
-            buyTime: "14:20 02/20/2025",
+            symbol: 'DDD',
+            signal: 'Mua',
+            buyRange: '52.0-52.5',
+            buyTime: '14:20 02/20/2025',
           },
           {
-            symbol: "EEE",
-            signal: "Mua",
-            buyRange: "19.8-20.2",
-            buyTime: "13:00 02/20/2025",
+            symbol: 'EEE',
+            signal: 'Mua',
+            buyRange: '19.8-20.2',
+            buyTime: '13:00 02/20/2025',
           },
         ];
 
@@ -94,7 +94,7 @@ const BuySignals = () => {
           hasMore.current = true;
         }
       } catch (error) {
-        console.log("error", error);
+        console.log('error', error);
       } finally {
         querying.current = false;
         gridRef.current?.hideOverlay();
@@ -103,7 +103,7 @@ const BuySignals = () => {
   };
 
   const refreshData = () => {
-    gridRef.current?.api?.setGridOption("rowData", []);
+    gridRef.current?.api?.setGridOption('rowData', []);
     lastRow.current = null;
     hasMore.current = false;
     querying.current = false;

@@ -1,0 +1,21 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Logo">
+<path id="logo-fill" d="M8.7701 25.0207C13.966 21.7529 16.4364 24.8846 18.603 29.0035C16.8102 32.268 15.6241 34.2602 15.0446 34.98C13.9519 36.3379 12.7599 37.366 11.2939 37.9592C8.21192 39.4077 4.38056 39.4754 1.42188 37.6846L8.7701 25.0207Z" fill="url(#paint0_linear_0_43)"/>
+<path id="logo-fill_2" fill-rule="evenodd" clip-rule="evenodd" d="M45.1253 23.3316C40.4259 15.1095 35.5682 7.36304 29.9881 18.7263C29.2247 20.1871 28.6683 23.0261 27.4219 23.0261V23.0117C26.1755 23.0117 25.6192 20.1727 24.8559 18.7119C19.2755 7.34862 14.4178 15.095 9.71847 23.3171C9.36481 23.9372 9.02509 24.529 8.73438 25.0433C19.5038 18.2257 18.5971 38.8219 27.4219 38.9856V39C36.2468 38.8363 35.3399 18.2402 46.1094 25.0575C45.8188 24.5434 45.4791 23.9516 45.1253 23.3316" fill="url(#paint1_linear_0_43)"/>
+<path id="logo-fill_3" fill-rule="evenodd" clip-rule="evenodd" d="M45.7031 39C48.3954 39 50.5781 36.8173 50.5781 34.125C50.5781 31.4327 48.3954 29.25 45.7031 29.25C43.0108 29.25 40.8281 31.4327 40.8281 34.125C40.8281 36.8173 43.0108 39 45.7031 39" fill="url(#paint2_linear_0_43)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_43" x1="15.4375" y1="17.0412" x2="6.65469" y2="26.3681" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2B7E2D"/>
+<stop offset="1" stop-color="#429744"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_43" x1="8.73438" y1="13" x2="8.73438" y2="39" gradientUnits="userSpaceOnUse">
+<stop stop-color="#55B657"/>
+<stop offset="1" stop-color="#08AE77"/>
+</linearGradient>
+<linearGradient id="paint2_linear_0_43" x1="40.8281" y1="29.25" x2="40.8281" y2="39" gradientUnits="userSpaceOnUse">
+<stop stop-color="#55B657"/>
+<stop offset="1" stop-color="#08AE77"/>
+</linearGradient>
+</defs>
+</svg>

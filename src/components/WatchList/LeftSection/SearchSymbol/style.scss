@@ -1,0 +1,151 @@
+.search-symbol-container {
+  position: relative;
+  width: 32.4rem;
+
+  .add-symbol-button {
+    width: 100%;
+    height: 5.2rem;
+    background: var(--bg-primary);
+    border-radius: 1.6rem;
+    padding: 1rem 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: var(--text-tertiary);
+    }
+
+    span {
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--text-tertiary);
+    }
+  }
+
+  .search-input-wrapper {
+    width: 100%;
+    height: 5.2rem;
+    background: var(--bg-primary);
+    border-radius: 1.6rem;
+    padding: 1rem 1.6rem;
+    display: flex;
+    align-items: center;
+
+    .search-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--text-tertiary);
+
+      &::placeholder {
+        color: var(--text-tertiary);
+      }
+
+      &:focus {
+        color: var(--text-primary);
+      }
+    }
+  }
+
+  .search-dropdown {
+    position: absolute;
+    top: 5.5rem;
+    left: 0;
+    width: 100%;
+    max-height: 32rem;
+    background: var(--bg-primary);
+    border: 1px solid transparent;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    z-index: 10;
+
+    .search-results {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-height: 32rem;
+      overflow-y: auto;
+
+      /* Custom scrollbar */
+      &::-webkit-scrollbar {
+        width: 0.4rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: var(--border-secondary);
+        border-radius: 0.4rem;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: var(--text-tertiary);
+      }
+
+      .search-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.8rem 1.2rem;
+        border-radius: 1.2rem;
+        cursor: pointer;
+        border-bottom: 1px solid transparent;
+        transition: background 0.2s ease;
+        border: 1px solid transparent;
+
+        &:hover {
+          background: linear-gradient(
+            90deg,
+            #111313 17.67%,
+            #222622 57.89%,
+            #111313 125.21%
+          );
+          border: 1px solid var(--border-primary);
+          .stock-info {
+            .stock-symbol {
+              color: var(--text-secondary);
+            }
+
+            .stock-name {
+              color: var(--text-secondary);
+            }
+          }
+        }
+
+        .stock-info {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+
+          .stock-symbol {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.4;
+            color: var(--text-tertiary);
+            margin: 0;
+          }
+
+          .stock-name {
+            font-size: 1.3rem;
+            font-weight: 400;
+            line-height: 1.4;
+            // font-style: italic;
+            color: var(--text-tertiary);
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

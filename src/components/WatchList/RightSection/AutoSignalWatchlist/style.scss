@@ -1,0 +1,139 @@
+.auto-signal-watchlist {
+  // Header row styling
+  .ag-header {
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-secondary);
+  }
+
+  .ag-header-cell-comp-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ag-header-cell {
+    padding: 0;
+    border-right: 1px solid var(--border-secondary);
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .ag-header-cell-label {
+    padding: 1.6rem;
+    justify-content: flex-start;
+  }
+
+  // Checkbox column header - center alignment
+  .ag-header-select-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  // Data row styling
+  .ag-row {
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-primary);
+
+    // Remove hover background change
+    &:hover {
+      background-color: var(--bg-primary) !important;
+    }
+
+    // Remove selected row background change
+    &.ag-row-selected {
+      background-color: var(--bg-primary) !important;
+
+      &:hover {
+        background-color: var(--bg-primary) !important;
+      }
+    }
+  }
+
+  .ag-cell {
+    padding: 0;
+    border-right: 1px solid var(--border-primary);
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    // Remove selected cell background
+    &.ag-cell-range-selected:not(.ag-cell-focus) {
+      background-color: var(--bg-primary) !important;
+    }
+  }
+
+  // Checkbox column cell - center alignment
+  .ag-cell.ag-cell-auto-height {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // Checkbox wrapper center alignment
+  .ag-selection-checkbox {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // Custom cell styling
+  .cell {
+    padding: 1.6rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .cell-custom {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  // Header text
+  .header {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  // Remove default AG Grid focus styling
+  .ag-cell-focus,
+  .ag-cell-no-focus {
+    border: none !important;
+  }
+
+  // Remove selection outline
+  .ag-cell-focus.ag-cell-range-selected:not(.ag-cell-range-single-cell) {
+    background-color: var(--bg-primary) !important;
+    border: none !important;
+  }
+
+  // Remove row highlight when selected
+  .ag-row-selected::before {
+    display: none !important;
+  }
+
+  .ag-row-hover::before {
+    display: none !important;
+  }
+
+  // Row height
+  .ag-row {
+    height: 6.3rem;
+  }
+
+  .ag-header-row {
+    height: 5.3rem;
+  }
+}

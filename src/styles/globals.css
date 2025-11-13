@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+@import 'keen-slider/keen-slider.min.css';
+
+@config "../../tailwind.config.js";
+
+/* Base font size configuration: 1rem = 10px */
+html {
+  font-size: 62.5%; /* 10px base */
+}
+
+/* Reset body to use 16px equivalent (1.6rem) */
+body {
+  font-size: 1.6rem; /* 16px */
+}
+
+/* HeroUI component overrides to prevent font size scaling issues */
+/* These overrides ensure HeroUI components maintain their intended sizes */
+:root {
+  /* Button sizes - keep original pixel-based sizes */
+  --heroui-button-sm-height: 3.2rem; /* 32px */
+  --heroui-button-md-height: 4rem; /* 40px */
+  --heroui-button-lg-height: 4.8rem; /* 48px */
+
+  /* Input sizes */
+  --heroui-input-sm-height: 3.2rem; /* 32px */
+  --heroui-input-md-height: 4rem; /* 40px */
+  --heroui-input-lg-height: 4.8rem; /* 48px */
+
+  /* Font sizes - maintain HeroUI's default sizes */
+  --heroui-font-size-tiny: 1.2rem; /* 12px */
+  --heroui-font-size-small: 1.4rem; /* 14px */
+  --heroui-font-size-medium: 1.6rem; /* 16px */
+  --heroui-font-size-large: 1.8rem; /* 18px */
+
+  /* Spacing units */
+  --heroui-spacing-unit: 0.4rem; /* 4px */
+  --heroui-spacing-unit-2: 0.8rem; /* 8px */
+  --heroui-spacing-unit-3: 1.2rem; /* 12px */
+  --heroui-spacing-unit-4: 1.6rem; /* 16px */
+  --heroui-spacing-unit-5: 2rem; /* 20px */
+  --heroui-spacing-unit-6: 2.4rem; /* 24px */
+  --heroui-spacing-unit-8: 3.2rem; /* 32px */
+  --heroui-spacing-unit-10: 4rem; /* 40px */
+  --heroui-spacing-unit-12: 4.8rem; /* 48px */
+  --heroui-spacing-unit-16: 6.4rem; /* 64px */
+  --heroui-spacing-unit-20: 8rem; /* 80px */
+
+  /* Border radius */
+  --heroui-radius-small: 0.8rem; /* 8px */
+  --heroui-radius-medium: 1.2rem; /* 12px */
+  --heroui-radius-large: 1.6rem; /* 16px */
+}
+
+.text-up {
+  color: var(--text-up) !important;
+}
+.text-down {
+  color: var(--text-down) !important;
+}
+
+/* @media screen and (min-width: 1537px) {
+  body {
+    font-size: 1.6rem; 
+    font-weight: 400;
+  }
+} */
+
+/* @media screen and (max-width: 1536px) and (min-width: 1281px) {
+  html {
+    font-size: 55%;
+  }
+  body {
+    font-size: 1.6rem;
+  }
+} */
+
+/* @media screen and (max-width: 1280px) and (min-width: 1101px) {
+  html {
+    font-size: 40%;
+  }
+  body {
+    font-size: 1.8rem;
+  }
+} */
+
+/* @media screen and (max-width: 1100px) {
+  html {
+    font-size: 35%;
+  }
+  body {
+    font-size: 2rem;
+  }
+} */

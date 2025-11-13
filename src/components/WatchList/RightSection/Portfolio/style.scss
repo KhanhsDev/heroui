@@ -1,0 +1,68 @@
+.portfolio-grid {
+  .ag-root-wrapper {
+    border-radius: 0;
+  }
+
+  .ag-header {
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid transparent;
+  }
+
+  .ag-header-row {
+    background-color: var(--bg-secondary);
+  }
+
+  .ag-header-cell {
+    background-color: var(--bg-secondary);
+    padding: 1rem 1.6rem;
+    height: 5.3rem;
+    border-right: 1px solid var(--bg-payment-main);
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .ag-header-cell-text {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .ag-row {
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid transparent;
+  }
+
+  .ag-cell {
+    background-color: var(--bg-primary);
+    padding: 0 1.6rem;
+    height: 4.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--bg-payment-main);
+    border-bottom: 1px solid var(--bg-payment-main);
+    color: var(--text-secondary);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.4;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .cell-action {
+    padding: 0;
+  }
+
+  .text-up {
+    color: var(--text-buy);
+  }
+
+  .text-down {
+    color: var(--text-sell);
+  }
+}

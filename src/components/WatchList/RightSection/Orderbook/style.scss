@@ -1,0 +1,73 @@
+.orderbook-grid {
+  .ag-root-wrapper {
+    border: none;
+  }
+
+  .ag-header {
+    background-color: var(--bg-secondary);
+    border-bottom: 0.1rem solid var(--border-secondary);
+    min-height: 5.3rem;
+  }
+
+  .ag-header-row {
+    background-color: var(--bg-secondary);
+  }
+
+  .ag-header-cell {
+    background-color: var(--bg-secondary);
+    border-right: 0.1rem solid var(--border-secondary);
+    padding: 0 1.6rem;
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    .ag-header-cell-label {
+      justify-content: start;
+      width: 100%;
+    }
+
+    .ag-header-cell-text {
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+  }
+
+  .ag-row {
+    border-bottom: 0.1rem solid transparent;
+    background-color: var(--bg-primary);
+  }
+
+  .ag-cell {
+    display: flex;
+    align-items: center;
+    padding: 0 1.6rem;
+    border-right: 0.1rem solid var(--bg-payment-main);
+    border-bottom: 0.1rem solid var(--bg-payment-main);
+    line-height: 1.4;
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    &:first-child {
+      justify-content: flex-start;
+    }
+  }
+
+  .cell-custom {
+    padding: 0;
+  }
+
+  .ag-overlay-loading-wrapper {
+    background-color: transparent;
+  }
+
+  .ag-overlay-loading-center {
+    border: none;
+    background-color: transparent;
+  }
+}

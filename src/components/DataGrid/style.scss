@@ -1,0 +1,223 @@
+.data-grid {
+  &.ag-theme-quartz {
+    --ag-font-family: var(--font-wix);
+    --ag-checkbox-unchecked-color: #a3a3a3;
+  }
+}
+
+.data-grid {
+  &.ag-theme-quartz {
+    --ag-border-color: var(--border-secondary);
+    --ag-odd-row-background-color: var(--bg-primary);
+    --ag-background-color: var(--bg-primary);
+    --ag-header-background-color: var(
+      --bg-secondary
+    ); // header background (#212525)
+    --ag-header-foreground-color: var(
+      --text-primary
+    ); // header text color (#EDE8E8)
+    --ag-header-column-separator-display: block; // border header vertical
+    --ag-header-column-separator-height: 100%; // border header vertical
+    --ag-header-column-separator-color: var(--border-primary);
+    --ag-font-family: var(--font-wix);
+    --ag-borders-critical: none; // border for pinned header
+    --ag-grid-size: 2px;
+    --ag-row-hover-color: transparent;
+    --ag-checkbox-checked-color: var(--primary);
+    --ag-checkbox-unchecked-color: var(--border-1);
+    --ag-font-size: 1.5rem; // 15px
+    --ag-icon-size: 1.6rem;
+
+    .ag-root-wrapper {
+      border: none;
+    }
+
+    // Custom scrollbar styling to match Figma
+    .ag-body-viewport {
+      &::-webkit-scrollbar {
+        width: 0.4rem; // 4px - thin scrollbar
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--border-secondary); // #363D3D
+        border-radius: 0.4rem;
+
+        &:hover {
+          background-color: #4a5050; // Slightly lighter on hover
+        }
+      }
+    }
+    .align-check-box {
+      display: flex !important;
+      justify-content: center !important;
+      .ag-header-cell-comp-wrapper {
+        width: 2px; // checkbox in header
+      }
+      .ag-checkbox-input-wrapper {
+        color: var(--border-1);
+      }
+    }
+  }
+  .ag-header-group-cell {
+    &.only-checkbox {
+      display: flex;
+      justify-content: center;
+      .ag-header-cell-comp-wrapper {
+        display: none;
+      }
+    }
+    &.header-box {
+      .ag-header-cell-comp-wrapper {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+    }
+    .align-check-box {
+      display: flex !important;
+      justify-content: center !important;
+      .ag-header-cell-comp-wrapper {
+        width: 2px; // checkbox in header
+      }
+      .ag-checkbox-input-wrapper {
+        color: var(--border-1);
+      }
+    }
+
+    .ag-checkbox {
+      .ag-input-wrapper {
+        overflow: hidden;
+      }
+    }
+  }
+
+  .ag-header {
+    .group-header {
+      --ag-borders-critical: 1px solid; // border for pinned header
+      border-left: 1px solid var(--ag-border-color);
+      border-right: 1px solid var(--ag-border-color);
+      .ag-header-cell-comp-wrapper {
+        justify-content: center;
+      }
+    }
+    .ag-pinned-left-header {
+      border-bottom: 1px solid var(--ag-border-color);
+    }
+    .ag-header-viewport {
+      .ag-header-container {
+        border-bottom: 1px solid var(--ag-border-color);
+        .ag-header-row {
+          .ag-header-cell {
+            &.text-right {
+              .ag-header-cell-label {
+                justify-content: flex-end;
+              }
+            }
+            &.text-center {
+              .ag-header-cell-label {
+                justify-content: center;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .ag-header-cell-text {
+      font-size: 1.5rem; // 15px - Body/Large/Medium from Figma
+      font-weight: 500; // Medium
+      line-height: 1.4;
+    }
+  }
+
+  .ag-row {
+    .ag-cell {
+      color: var(--text-primary); // #EDE8E8 from Figma
+      font-size: 1.5rem; // 15px - Body/Large/Medium from Figma
+      font-weight: 500; // Medium
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      &.bold {
+        color: white;
+        font-weight: 500;
+      }
+      &.text-right {
+        text-align: right;
+        justify-content: flex-end;
+      }
+      &.text-center {
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  // Global scrollbar styling for entire data-grid
+  ::-webkit-scrollbar {
+    width: 0.4rem; // 4px
+    height: 0.4rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--border-secondary); // #363D3D from Figma
+    border-radius: 0.4rem;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #4a5050; // Slightly lighter on hover
+    }
+  }
+}
+
+.sticky-pinned-right {
+  .ag-pinned-right-cols-container {
+    .ag-row-hover:not(.ag-full-width-row)::before {
+      background-color: transparent !important;
+    }
+  }
+  /* Hide right header and spacer */
+
+  .ag-pinned-right-header,
+  .ag-horizontal-right-spacer {
+    width: 0 !important;
+    min-width: 0 !important;
+  }
+  .action-cell {
+    button {
+      background-color: var(--bg-4) !important;
+    }
+  }
+
+  /* Add absolute position so that action buttons column will appear on top of other columns. pointer-events: none to pass on mousemove event to behind columns */
+  .ag-pinned-right-cols-container {
+    position: absolute !important;
+    right: 0;
+    pointer-events: none;
+  }
+  /* Reset pointer-events so that click can happen on action buttons */
+  .ag-pinned-right-cols-container * {
+    pointer-events: initial;
+  }
+
+  /* Hide border of right-cols-container */
+  .ag-pinned-right-cols-container .ag-cell {
+    border: none !important;
+  }
+
+  /* Show action buttons only for row that is being hovered. For rows which are not being hovered, hide them by setting their width and padding to 0.*/
+  .ag-pinned-right-cols-container .ag-row:not(.ag-row-hover),
+  .ag-pinned-right-cols-container .ag-row:not(.ag-row-hover) .ag-cell {
+    width: 0 !important;
+    padding: 0 !important;
+  }
+}

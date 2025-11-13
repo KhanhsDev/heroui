@@ -1,0 +1,33 @@
+.notification {
+    display: block;
+    > .title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        span:first-child {
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            > .logo-success {
+                color: var(--green);
+            }
+            > .logo-info {
+                color: var(--blue-2);
+            }
+            > .logo-warning {
+                color: var(--yellow);
+            }
+            > .logo-error {
+                color: var(--red);
+            }
+            > .logo-default {
+                color: var(--light-gray);
+            }
+        }
+    }
+    .form-link-register {
+        a {
+            color: var(--blue) !important;
+        }
+    }
+}

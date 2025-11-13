@@ -1,0 +1,80 @@
+.account-management {
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 2.4rem;
+    border-bottom: 1px solid var(--border-secondary);
+    padding-bottom: 1.6rem;
+  }
+
+  .tab {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    transition: color 0.2s;
+    padding-bottom: 1.6rem;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      color: var(--text-primary);
+    }
+
+    &.active {
+      color: var(--text-primary);
+      border-bottom-color: var(--text-primary);
+    }
+  }
+
+  .grid-container {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 2.4rem;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2.4rem;
+  }
+
+  .link-account-btn {
+    padding: 1.2rem 2.4rem;
+    border-radius: 0.8rem;
+    background: var(--bg-gradient-confirm-btn);
+    color: var(--text-secondary);
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.4;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .account-mng-grid {
+    .ag-header-cell {
+      padding: 0 1.6rem;
+    }
+    .ag-cell {
+      padding: 0 1.6rem;
+      border-right-color: var(--bg-payment-main);
+    }
+    .ag-row {
+      border-bottom: 1px solid var(--bg-payment-main);
+    }
+    .ag-header-container {
+      border-bottom: none !important;
+    }
+  }
+}

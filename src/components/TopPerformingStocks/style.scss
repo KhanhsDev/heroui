@@ -1,0 +1,30 @@
+.data-grid {
+  .top-perform-stock {
+    .ag-header {
+      .ag-header-viewport {
+        .ag-header-container {
+          border-bottom: none !important;
+        }
+      }
+    }
+    .ag-row {
+      border-bottom: 1px dashed var(--border-secondary);
+    }
+
+    .ag-root-wrapper {
+      border-radius: 0 !important;
+    }
+
+    // Custom styling for buy/sell cells
+    .cell-custom {
+      padding: 0 !important;
+      overflow: visible !important;
+
+      // Ensure full height for background color
+      > div {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+div:has(> .minute-chart-pro) {
+  height: 100%;
+}

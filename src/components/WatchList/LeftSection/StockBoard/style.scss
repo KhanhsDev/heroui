@@ -1,0 +1,124 @@
+.stock-board {
+  .ag-root-wrapper {
+    border: none;
+    border-radius: 0;
+  }
+
+  .ag-header {
+    background: var(--bg-secondary);
+    border-bottom: 0.1rem solid var(--border-secondary);
+  }
+
+  .ag-header-cell {
+    background: var(--bg-secondary);
+    border-right: 0.1rem solid var(--border-secondary);
+    padding: 0.8rem;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .ag-header-cell-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+  }
+
+  .ag-row {
+    background: var(--bg-primary);
+    border-bottom: 0.1rem solid var(--border-secondary);
+    min-height: 6.2rem !important;
+    height: 6.2rem !important;
+
+    &:hover {
+      background: var(--bg-secondary);
+    }
+  }
+
+  .ag-cell {
+    border-right: 0.1rem solid var(--border-secondary);
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    // Cell backgrounds based on column type
+    &.cell-buy-sell {
+      background-color: #000000;
+    }
+
+    &.cell-match {
+      background-color: var(--bg-primary);
+    }
+
+    &.cell-change {
+      background-color: var(--bg-primary);
+    }
+
+    &.cell-ctf,
+    &.cell-foreign,
+    &.cell-status {
+      background-color: #000000;
+    }
+
+    &.text-end {
+      justify-content: flex-end;
+      padding: 0 0.8rem !important;
+    }
+  }
+
+  // Custom cell styles
+  .cell {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.4;
+
+    &.text-center {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  .cell-symbol {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  // Price change colors
+  .text-up {
+    color: var(--text-up);
+  }
+
+  .text-down {
+    color: var(--text-down);
+  }
+
+  .text-ref {
+    color: var(--text-reference);
+  }
+
+  .text-ceiling {
+    color: var(--text-ceiling);
+  }
+
+  .text-floor {
+    color: var(--text-floor);
+  }
+
+  // Loading overlay
+  .ag-overlay-loading-wrapper {
+    background: rgba(var(--bg-primary), 0.8);
+  }
+
+  .ag-overlay-no-rows-wrapper {
+    background: var(--bg-primary);
+  }
+}

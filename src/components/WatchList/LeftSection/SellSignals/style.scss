@@ -1,0 +1,83 @@
+.data-grid {
+  .sell-signals-grid {
+    .ag-header {
+      background: var(--bg-secondary);
+
+      .ag-header-viewport {
+        .ag-header-container {
+          border-bottom: 1px solid transparent;
+
+          .ag-header-row {
+            .ag-header-cell {
+              border-right: 1px solid transparent;
+              padding: 1rem 1.6rem;
+
+              &:last-child {
+                border-right: none;
+              }
+
+              .ag-header-cell-label {
+                justify-content: flex-start;
+
+                .ag-header-cell-text {
+                  font-size: 1.4rem;
+                  font-weight: 500;
+                  line-height: 1.4;
+                  color: var(--text-primary);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .ag-body-viewport {
+      .ag-center-cols-container {
+        .ag-row {
+          border-bottom: 1px solid transparent;
+
+          &:hover {
+            background: transparent;
+          }
+
+          .ag-cell {
+            border-right: 1px solid transparent;
+            padding: 1rem 0.8rem;
+
+            &:last-child {
+              border-right: none;
+            }
+
+            &.text-left {
+              justify-content: flex-start;
+              padding-left: 0.8rem;
+
+              .ag-cell-value {
+                font-size: 1.4rem;
+                font-weight: 600;
+                line-height: 1.3;
+                color: var(--text-primary);
+              }
+            }
+
+            &.cell-custom {
+              padding: 0 !important;
+              overflow: visible !important;
+
+              > div {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .ag-root-wrapper {
+      border-radius: 0 !important;
+      border: none !important;
+    }
+  }
+}

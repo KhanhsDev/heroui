@@ -1,0 +1,98 @@
+:root {
+  /* Text colors */
+  --text-primary: #ede8e8;
+  --text-secondary: #ffffff;
+  --text-tertiary: #929196;
+  --text-brand-green: #55b657;
+  --text-brand-name: #ebf5ff;
+
+  /* Background colors */
+  --bg-primary: #111313;
+  --bg-secondary: #212525;
+  --bg-tertiary: #262626;
+  --bg-card: #161919;
+  --bg-payment-main: #1a1c1b;
+  --bg-gradient-start: #55b657;
+  --bg-gradient-end: #08ae77;
+  --bg-success: #00b45f;
+  --bg-success-alpha: rgba(0, 180, 95, 0.1);
+  --bg-success-gradient-start: #2cd069;
+  --bg-success-gradient-end: #c5ffdb;
+  --bg-danger-alpha: rgba(255, 47, 47, 0.1);
+  --bg-danger-gradient-start: #ff2f2f;
+  --bg-danger-gradient-end: #ff8181;
+  --bg-warning-alpha: rgba(255, 145, 0, 0.1);
+  --bg-unlinked-alpha: rgba(146, 145, 150, 0.1);
+
+  /* Gradient backgrounds */
+  --bg-gradient-icon-from: #111313;
+  --bg-gradient-icon-via: #222622;
+  --bg-gradient-icon-to: #111313;
+  --bg-gradient-modal: linear-gradient(
+    90deg,
+    #111313 -17.67%,
+    #222622 57.89%,
+    #111313 125.21%
+  );
+  --bg-gradient-confirm-btn: linear-gradient(180deg, #55b657 0%, #08ae77 100%);
+
+  /* Border colors */
+  --border-primary: #1a1c1c;
+  --border-secondary: #363d3d;
+  --border-active: #ede8e8;
+  --border-success: #eef4f1;
+  --border-success-alpha: rgba(0, 180, 95, 0.1);
+  --border-bank: rgba(237, 232, 232, 0.2);
+
+  /* Icon colors */
+  --icon-primary: #ede8e8;
+  --icon-secondary: #929196;
+  --icon-warning: #ff9100;
+
+  /* Text danger color */
+  --text-danger: #ff2f2f;
+  --text-warning: #ff9100;
+
+  /* Brand colors */
+  --brand-green-dark: #2b7e2d;
+  --brand-green-light: #429744;
+  --brand-gradient-start: #55b657;
+  --brand-gradient-end: #08ae77;
+
+  /* Chart colors */
+  --line-up: #2ebd85;
+  --line-up-0: rgba(46, 189, 133, 0.5);
+  --line-up-1: rgba(9, 37, 26, 0);
+  --line-down: #f5465c;
+  --line-down-0: rgba(245, 70, 92, 0.5);
+  --line-down-1: rgba(49, 14, 18, 0);
+  --yellow: #fbbf24;
+  --border-1: #242631;
+  --text-1: #ede8e8;
+  --minute-label: #929196;
+
+  /* Index Info specific colors */
+  --index-up: #31bd65;
+  --index-down: #ff4b4b;
+  --index-ceiling: #fdd03e;
+
+  /* Trading colors */
+  --bg-buy: #2cd069;
+  --bg-sell: #ff4b4b;
+  --bg-buy-alpha: rgba(49, 189, 101, 0.1); /* Background for buy button */
+  --bg-sell-alpha: rgba(231, 66, 66, 0.2); /* Background for sell button */
+
+  --text-buy: #2ebd85; /* Green for buy prices */
+  --text-sell: #f5465c; /* Red for sell prices */
+  --text-buy-new: #1cb31c; /* Green for buy prices */
+  --text-sell-new: #bc0100; /* Red for sell prices */
+
+  /* Stock price status colors */
+  --text-ceiling: #fb01f9; /* Magenta for ceiling price */
+  --text-floor: #06f5f5; /* Cyan for floor price */
+  --text-reference: #ffcc01; /* Yellow for reference price */
+  --text-up: #2ebd85;
+  --text-down: #f5465c;
+  --text-up-new: #1cb31c;
+  --text-down-new: #bc0100;
+}

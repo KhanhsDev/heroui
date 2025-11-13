@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@heroui/button";
-import { Select, SelectItem } from "@heroui/select";
-import CheckIcon from "@/svg/CheckIcon";
-import CloseIcon from "@/svg/CloseIcon";
-import ChevronDownIcon from "@/svg/ChevronDownIcon";
+import { useState } from 'react';
+import { Button } from '@heroui/button';
+import { Select, SelectItem } from '@heroui/select';
+import CheckIcon from '@/assets/svg/CheckIcon';
+import CloseIcon from '@/assets/svg/CloseIcon';
+import ChevronDownIcon from '@/assets/svg/ChevronDownIcon';
 
 type SubscriptionPlan = {
   name: string;
@@ -27,30 +27,30 @@ type Props = {
   onBuyPlan?: (
     planName: string,
     billingCycle: string,
-    totalAmount: string
+    totalAmount: string,
   ) => void;
 };
 
 export default function Subscription({ onClose, onBuyPlan }: Props) {
-  const [billingCycle, setBillingCycle] = useState("1month");
+  const [billingCycle, setBillingCycle] = useState('1month');
 
   const billingOptions = [
-    { key: "1month", label: "1 tháng" },
-    { key: "3months", label: "3 tháng" },
-    { key: "6months", label: "6 tháng" },
-    { key: "1year", label: "1 năm" },
+    { key: '1month', label: '1 tháng' },
+    { key: '3months', label: '3 tháng' },
+    { key: '6months', label: '6 tháng' },
+    { key: '1year', label: '1 năm' },
   ];
 
   const getBillingCycleLabel = (key: string) => {
     return (
-      billingOptions.find((option) => option.key === key)?.label || "1 tháng"
+      billingOptions.find(option => option.key === key)?.label || '1 tháng'
     );
   };
 
   const plans: SubscriptionPlan[] = [
     {
-      name: "Free",
-      price: "0",
+      name: 'Free',
+      price: '0',
       devices: 1,
       accounts: 0,
       features: {
@@ -63,8 +63,8 @@ export default function Subscription({ onClose, onBuyPlan }: Props) {
       },
     },
     {
-      name: "Cơ bản",
-      price: "1,500,000",
+      name: 'Cơ bản',
+      price: '1,500,000',
       devices: 1,
       accounts: 0,
       features: {
@@ -77,8 +77,8 @@ export default function Subscription({ onClose, onBuyPlan }: Props) {
       },
     },
     {
-      name: "Tiêu chuẩn",
-      price: "7,000,000",
+      name: 'Tiêu chuẩn',
+      price: '7,000,000',
       devices: 3,
       accounts: 3,
       features: {
@@ -91,8 +91,8 @@ export default function Subscription({ onClose, onBuyPlan }: Props) {
       },
     },
     {
-      name: "Nâng cao",
-      price: "7,000,000",
+      name: 'Nâng cao',
+      price: '7,000,000',
       devices: 4,
       accounts: 4,
       features: {
@@ -107,27 +107,27 @@ export default function Subscription({ onClose, onBuyPlan }: Props) {
   ];
 
   const features = [
-    { label: "Số lượng thiết bị", key: "devices" },
-    { label: "Số tài khoản được liên kết", key: "accounts" },
-    { label: "Sử dụng tài khoản ảo", key: "virtualAccount" },
-    { label: "Xem dữ liệu lịch sử", key: "historyData" },
-    { label: "Backtest", key: "backtest" },
-    { label: "Nhận tín hiệu qua tin nhắn", key: "messageSignals" },
-    { label: "Báo mua/bán", key: "buySignals" },
-    { label: "Tự động mua/bán", key: "autoTrading" },
+    { label: 'Số lượng thiết bị', key: 'devices' },
+    { label: 'Số tài khoản được liên kết', key: 'accounts' },
+    { label: 'Sử dụng tài khoản ảo', key: 'virtualAccount' },
+    { label: 'Xem dữ liệu lịch sử', key: 'historyData' },
+    { label: 'Backtest', key: 'backtest' },
+    { label: 'Nhận tín hiệu qua tin nhắn', key: 'messageSignals' },
+    { label: 'Báo mua/bán', key: 'buySignals' },
+    { label: 'Tự động mua/bán', key: 'autoTrading' },
   ];
 
   const FeatureIcon = ({ available }: { available: boolean }) => (
     <div
       className={`flex items-center justify-center size-[3.6rem] rounded-full ${
-        available ? "bg-[rgba(0,180,95,0.1)]" : "bg-[rgba(255,47,47,0.1)]"
+        available ? 'bg-[rgba(0,180,95,0.1)]' : 'bg-[rgba(255,47,47,0.1)]'
       }`}
     >
       <div
         className={`flex items-center justify-center size-[3rem] rounded-full ${
           available
-            ? "bg-gradient-to-b from-[#55b657] to-[#08ae77]"
-            : "bg-gradient-to-b from-[#ff2f2f] to-[#a13e3e]"
+            ? 'bg-gradient-to-b from-[#55b657] to-[#08ae77]'
+            : 'bg-gradient-to-b from-[#ff2f2f] to-[#a13e3e]'
         }`}
       >
         {available ? <CheckIcon /> : <CloseIcon />}
@@ -156,27 +156,27 @@ export default function Subscription({ onClose, onBuyPlan }: Props) {
           </p>
           <Select
             selectedKeys={[billingCycle]}
-            onChange={(e) => setBillingCycle(e.target.value)}
+            onChange={e => setBillingCycle(e.target.value)}
             selectorIcon={<ChevronDownIcon />}
             classNames={{
               trigger:
-                "cursor-pointer bg-gradient-to-r from-[#111313] from-[17.671%] via-[#222622] via-[44.546%] to-[#111313] to-[125.21%] rounded-[1.2rem] h-[3.6rem] min-h-[3.6rem] px-[1.2rem] py-[1rem] gap-[1rem] w-[11rem]",
+                'cursor-pointer bg-gradient-to-r from-[#111313] from-[17.671%] via-[#222622] via-[44.546%] to-[#111313] to-[125.21%] rounded-[1.2rem] h-[3.6rem] min-h-[3.6rem] px-[1.2rem] py-[1rem] gap-[1rem] w-[11rem]',
               value:
-                "text-[1.5rem] font-[600] leading-[1.4] text-[var(--text-primary)]",
+                'text-[1.5rem] font-[600] leading-[1.4] text-[var(--text-primary)]',
               listboxWrapper:
-                "bg-gradient-to-r from-[#111313] via-[#222622] to-[#111313]",
+                'bg-gradient-to-r from-[#111313] via-[#222622] to-[#111313]',
               popoverContent:
-                "bg-gradient-to-r from-[#111313] via-[#222622] to-[#111313] rounded-[1.2rem] w-[11rem]",
+                'bg-gradient-to-r from-[#111313] via-[#222622] to-[#111313] rounded-[1.2rem] w-[11rem]',
             }}
             aria-label="Chu kỳ thanh toán"
           >
-            {billingOptions.map((option) => (
+            {billingOptions.map(option => (
               <SelectItem
                 key={option.key}
                 classNames={{
-                  base: "text-[1.5rem] font-[600] leading-[1.4] text-[var(--text-primary)] h-[4rem] min-h-[4rem] py-[1rem] px-[1.2rem]",
+                  base: 'text-[1.5rem] font-[600] leading-[1.4] text-[var(--text-primary)] h-[4rem] min-h-[4rem] py-[1rem] px-[1.2rem]',
                   title:
-                    "text-[1.5rem] font-[600] leading-[1.4] text-[var(--text-primary)]",
+                    'text-[1.5rem] font-[600] leading-[1.4] text-[var(--text-primary)]',
                 }}
               >
                 {option.label}
@@ -197,7 +197,7 @@ export default function Subscription({ onClose, onBuyPlan }: Props) {
           </div>
 
           {/* Plan Cards */}
-          {plans.map((plan) => (
+          {plans.map(plan => (
             <div
               key={plan.name}
               className="flex-1 px-[2.4rem] py-[1.6rem] flex flex-col gap-[1.6rem] mt-[2.4rem]"
@@ -210,7 +210,7 @@ export default function Subscription({ onClose, onBuyPlan }: Props) {
                   {plan.price} <span className="text-[#929196]">vnđ</span>
                 </p>
               </div>
-              {plan.name !== "Free" && (
+              {plan.name !== 'Free' && (
                 <Button
                   variant="flat"
                   className="w-full h-[4rem] bg-[#212525] rounded-[1.6rem] cursor-pointer"
@@ -219,7 +219,7 @@ export default function Subscription({ onClose, onBuyPlan }: Props) {
                       onBuyPlan(
                         plan.name,
                         getBillingCycleLabel(billingCycle),
-                        plan.price
+                        plan.price,
                       );
                     }
                   }}
@@ -239,8 +239,8 @@ export default function Subscription({ onClose, onBuyPlan }: Props) {
             <div
               key={feature.key}
               className={`flex items-center h-[5.1rem] ${
-                index % 2 === 0 ? "bg-[#151716] rounded-[1.2rem]" : ""
-              } ${index !== features.length - 1 ? "" : ""}`}
+                index % 2 === 0 ? 'bg-[#151716] rounded-[1.2rem]' : ''
+              } ${index !== features.length - 1 ? '' : ''}`}
             >
               <div className="w-[26.2rem] px-[1.6rem] py-[0.8rem]">
                 <p className="text-[1.8rem] font-[400] leading-[1.2] text-[var(--text-primary)]">
@@ -248,11 +248,11 @@ export default function Subscription({ onClose, onBuyPlan }: Props) {
                 </p>
               </div>
 
-              {plans.map((plan) => {
+              {plans.map(plan => {
                 const value =
-                  feature.key === "devices"
+                  feature.key === 'devices'
                     ? plan.devices
-                    : feature.key === "accounts"
+                    : feature.key === 'accounts'
                       ? plan.accounts
                       : plan.features[
                           feature.key as keyof typeof plan.features
@@ -263,7 +263,7 @@ export default function Subscription({ onClose, onBuyPlan }: Props) {
                     key={plan.name}
                     className="flex-1 px-[3.2rem] py-[1rem] flex items-center justify-start"
                   >
-                    {typeof value === "boolean" ? (
+                    {typeof value === 'boolean' ? (
                       <FeatureIcon available={value} />
                     ) : (
                       <p className="text-[1.8rem] font-[600] w-[3.6rem] flex justify-center items-center leading-[1.2] text-[var(--text-primary)]">

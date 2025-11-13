@@ -19,6 +19,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   classNames,
 }) => {
   const { theme, setTheme } = useTheme();
+  console.log('Check theme', theme);
   const isSSR = useIsSSR();
 
   const onChange = () => {

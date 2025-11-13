@@ -1,7 +1,7 @@
-import React from "react";
-import CheckBoxIcon from "@/svg/CheckBoxIcon";
-import UnCheckBoxIcon from "@/svg/UnCheckBoxIcon";
-import type { ICellRendererParams } from "ag-grid-community";
+import React from 'react';
+import CheckBoxIcon from '@/assets/svg/CheckBoxIcon';
+import UnCheckBoxIcon from '@/assets/svg/UnCheckBoxIcon';
+import type { ICellRendererParams } from 'ag-grid-community';
 
 const CheckBoxCell = ({
   node,

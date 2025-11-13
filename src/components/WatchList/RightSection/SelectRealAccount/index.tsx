@@ -1,9 +1,9 @@
-"use client";
-import React, { useState } from "react";
-import { Select, SelectItem } from "@heroui/select";
-import { Button } from "@heroui/button";
-import { Avatar } from "@heroui/avatar";
-import ChevronDownIcon from "@/svg/ChevronDownIcon";
+'use client';
+import React, { useState } from 'react';
+import { Select, SelectItem } from '@heroui/select';
+import { Button } from '@heroui/button';
+import { Avatar } from '@heroui/avatar';
+import ChevronDownIcon from '@/assets/svg/ChevronDownIcon';
 
 interface Account {
   key: string;
@@ -16,19 +16,19 @@ interface Props {
 }
 
 const SelectRealAccount = (props: Props) => {
-  const [selectedAccount, setSelectedAccount] = useState("03556XXX");
+  const [selectedAccount, setSelectedAccount] = useState('03556XXX');
 
   // Mock data - replace with real account data
   const accounts: Account[] = [
     {
-      key: "03556XXX",
-      label: "03556XXX",
-      icon: "/assets/png/dsc-avatar.png",
+      key: '03556XXX',
+      label: '03556XXX',
+      icon: '/assets/png/dsc-avatar.png',
     },
     {
-      key: "03557XXX",
-      label: "03557XXX",
-      icon: "/assets/png/dsc-avatar.png",
+      key: '03557XXX',
+      label: '03557XXX',
+      icon: '/assets/png/dsc-avatar.png',
     },
   ];
 
@@ -45,21 +45,21 @@ const SelectRealAccount = (props: Props) => {
         <div className="flex-1">
           <Select
             selectedKeys={[selectedAccount]}
-            onChange={(e) => setSelectedAccount(e.target.value)}
+            onChange={e => setSelectedAccount(e.target.value)}
             classNames={{
               trigger:
-                "cursor-pointer bg-gradient-to-r from-[var(--bg-gradient-icon-from)] from-[-17.67%] via-[var(--bg-gradient-icon-via)] via-[57.89%] to-[var(--bg-gradient-icon-to)] to-[125.21%] rounded-[1.2rem] h-[4.8rem] min-h-[4.8rem] px-[1.6rem] gap-[0.8rem] border-[0.1rem] border-[var(--border-secondary)]",
+                'cursor-pointer bg-gradient-to-r from-[var(--bg-gradient-icon-from)] from-[-17.67%] via-[var(--bg-gradient-icon-via)] via-[57.89%] to-[var(--bg-gradient-icon-to)] to-[125.21%] rounded-[1.2rem] h-[4.8rem] min-h-[4.8rem] px-[1.6rem] gap-[0.8rem] border-[0.1rem] border-[var(--border-secondary)]',
               value:
-                "text-[1.8rem] font-[400] leading-[1.2] text-[var(--text-primary)]",
+                'text-[1.8rem] font-[400] leading-[1.2] text-[var(--text-primary)]',
               listboxWrapper:
-                "bg-gradient-to-r from-[var(--bg-gradient-icon-from)] via-[var(--bg-gradient-icon-via)] to-[var(--bg-gradient-icon-to)]",
+                'bg-gradient-to-r from-[var(--bg-gradient-icon-from)] via-[var(--bg-gradient-icon-via)] to-[var(--bg-gradient-icon-to)]',
               popoverContent:
-                "bg-gradient-to-r from-[var(--bg-gradient-icon-from)] via-[var(--bg-gradient-icon-via)] to-[var(--bg-gradient-icon-to)] rounded-[1.2rem] border-[0.1rem] border-[var(--border-secondary)]",
-              innerWrapper: "flex items-center gap-[0.8rem]",
+                'bg-gradient-to-r from-[var(--bg-gradient-icon-from)] via-[var(--bg-gradient-icon-via)] to-[var(--bg-gradient-icon-to)] rounded-[1.2rem] border-[0.1rem] border-[var(--border-secondary)]',
+              innerWrapper: 'flex items-center gap-[0.8rem]',
             }}
-            renderValue={(items) => {
-              return items.map((item) => {
-                const account = accounts.find((a) => a.key === item.key);
+            renderValue={items => {
+              return items.map(item => {
+                const account = accounts.find(a => a.key === item.key);
                 return (
                   <div
                     key={item.key}
@@ -80,14 +80,14 @@ const SelectRealAccount = (props: Props) => {
             aria-label="Chọn tài khoản"
             selectorIcon={<ChevronDownIcon />}
           >
-            {accounts.map((account) => (
+            {accounts.map(account => (
               <SelectItem
                 key={account.key}
                 textValue={account.label}
                 classNames={{
-                  base: "h-[4.8rem] min-h-[4.8rem] py-[1rem] px-[1.6rem] hover:bg-[var(--bg-secondary)] data-[hover=true]:bg-[var(--bg-secondary)]",
+                  base: 'h-[4.8rem] min-h-[4.8rem] py-[1rem] px-[1.6rem] hover:bg-[var(--bg-secondary)] data-[hover=true]:bg-[var(--bg-secondary)]',
                   title:
-                    "text-[1.8rem] font-[400] leading-[1.2] text-[var(--text-primary)]",
+                    'text-[1.8rem] font-[400] leading-[1.2] text-[var(--text-primary)]',
                 }}
               >
                 <div className="flex items-center gap-[0.8rem]">

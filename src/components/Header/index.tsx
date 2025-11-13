@@ -4,14 +4,16 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import SearchIcon from '@/svg/SearchIcon';
-import BellIcon from '@/svg/BellIcon';
+import SearchIcon from '@/assets/svg/SearchIcon';
+import BellIcon from '@/assets/svg/BellIcon';
 import Profile from '@/components/Profile';
 import { ThemeSwitch } from '../theme-switch';
+import ShoppingCartIcon from '@/assets/svg/ShoppingCart';
+import ShoppingCart from '../ShoppingCart';
 
 export default function Header() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-
+  const [isShowCart, setIsShowCart] = useState(false);
   const handleLogout = () => {
     setIsProfileOpen(false);
     // TODO: Xử lý logout logic
@@ -40,7 +42,14 @@ export default function Header() {
         <button className="cursor-pointer flex h-[4.4rem] w-[4.4rem] items-center justify-center rounded-[1.6rem] bg-gradient-to-r from-[#111313] via-[#222622] to-[#111313]">
           <ThemeSwitch />
         </button>
-
+        <button
+          className="cursor-pointer flex h-[4.4rem] w-[4.4rem] items-center justify-center rounded-[1.6rem] bg-gradient-to-r from-[#111313] via-[#222622] to-[#111313]"
+          onClick={() => {
+            setIsShowCart(true);
+          }}
+        >
+          <ShoppingCartIcon className="text-[#FFFFFF] size-[2rem]" />
+        </button>
         {/* Notification Button */}
         <div className="relative">
           <button className="cursor-pointer flex h-[4.4rem] w-[4.4rem] items-center justify-center rounded-[1.6rem] bg-gradient-to-r from-[#111313] via-[#222622] to-[#111313]">
@@ -73,6 +82,32 @@ export default function Header() {
 
       {/* Profile Modal - Full Screen */}
       <AnimatePresence>
+        {isShowCart && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex"
+          >
+            <div
+              className="flex-1 bg-black/50"
+              onClick={() => setIsShowCart(false)}
+            />
+
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'tween', duration: 0.3 }}
+              className="w-[100rem] h-full bg-[var(--bg-secondary)] overflow-y-auto"
+            >
+              <ShoppingCart />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
         {isProfileOpen && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -93,7 +128,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="w-[32rem] h-full bg-[var(--bg-secondary)] overflow-y-auto"
+              className="w-[35rem] h-full bg-[var(--bg-secondary)] overflow-y-auto"
             >
               <Profile onLogout={handleLogout} />
             </motion.div>

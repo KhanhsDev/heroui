@@ -1,11 +1,11 @@
-"use client";
-import React, { useRef, useState } from "react";
-import { ColDef } from "ag-grid-community";
-import DataGrid, { DataGridHandle } from "@/components/DataGrid";
-import BackIcon from "@/svg/BackIcon";
-import StatusCellRenderer from "./StatusCellRenderer";
-import ActionCellRenderer from "./ActionCellRenderer";
-import "./style.scss";
+'use client';
+import React, { useRef, useState } from 'react';
+import { ColDef } from 'ag-grid-community';
+import DataGrid, { DataGridHandle } from '@/components/DataGrid';
+import BackIcon from '@/assets/svg/BackIcon';
+import StatusCellRenderer from './StatusCellRenderer';
+import ActionCellRenderer from './ActionCellRenderer';
+import './style.scss';
 
 interface Props {
   onBack: () => void;
@@ -21,53 +21,53 @@ const AccountManagement = (props: Props) => {
 
   const columnDefs = useRef<Array<ColDef<any>>>([
     {
-      headerName: "Tài khoản",
-      field: "accountNumber",
+      headerName: 'Tài khoản',
+      field: 'accountNumber',
       minWidth: 120,
       maxWidth: 120,
-      headerClass: "header",
-      cellClass: "cell",
+      headerClass: 'header',
+      cellClass: 'cell',
     },
     {
-      headerName: "Công ty CK",
-      field: "company",
+      headerName: 'Công ty CK',
+      field: 'company',
       minWidth: 120,
       flex: 1,
-      headerClass: "header",
-      cellClass: "cell",
+      headerClass: 'header',
+      cellClass: 'cell',
     },
     {
-      headerName: "Chủ tài khoản",
-      field: "accountOwner",
+      headerName: 'Chủ tài khoản',
+      field: 'accountOwner',
       minWidth: 180,
       flex: 1,
-      headerClass: "header",
-      cellClass: "cell",
+      headerClass: 'header',
+      cellClass: 'cell',
     },
     {
-      headerName: "Trạng thái",
-      field: "status",
+      headerName: 'Trạng thái',
+      field: 'status',
       minWidth: 130,
       flex: 1,
-      headerClass: "header",
-      cellClass: "cell-center",
+      headerClass: 'header',
+      cellClass: 'cell-center',
       cellRenderer: StatusCellRenderer,
     },
     {
-      headerName: "Thời gian",
-      field: "timestamp",
+      headerName: 'Thời gian',
+      field: 'timestamp',
       minWidth: 160,
       flex: 1,
-      headerClass: "header",
-      cellClass: "cell",
+      headerClass: 'header',
+      cellClass: 'cell',
     },
     {
-      headerName: "",
-      field: "action",
+      headerName: '',
+      field: 'action',
       minWidth: 140,
       maxWidth: 140,
-      headerClass: "header",
-      cellClass: "cell-center",
+      headerClass: 'header',
+      cellClass: 'cell-center',
       cellRenderer: ActionCellRenderer,
     },
   ]);
@@ -85,25 +85,25 @@ const AccountManagement = (props: Props) => {
         // Fake data - dựa trên Figma design
         const rowData: any[] = [
           {
-            accountNumber: "020343555",
-            company: "DSC",
-            accountOwner: "Nguyễn Thu Hiền",
-            status: "linked", // 'pending' | 'linked' | 'cancelled'
-            timestamp: "10:30 02/20/2025",
+            accountNumber: '020343555',
+            company: 'DSC',
+            accountOwner: 'Nguyễn Thu Hiền',
+            status: 'linked', // 'pending' | 'linked' | 'cancelled'
+            timestamp: '10:30 02/20/2025',
           },
           {
-            accountNumber: "020343555",
-            company: "DSC",
-            accountOwner: "Nguyễn Thu Hiền",
-            status: "linked",
-            timestamp: "10:30 02/20/2025",
+            accountNumber: '020343555',
+            company: 'DSC',
+            accountOwner: 'Nguyễn Thu Hiền',
+            status: 'linked',
+            timestamp: '10:30 02/20/2025',
           },
           {
-            accountNumber: "020343555",
-            company: "DSC",
-            accountOwner: "Nguyễn Thu Hiền",
-            status: "unlinked",
-            timestamp: "10:30 02/20/2025",
+            accountNumber: '020343555',
+            company: 'DSC',
+            accountOwner: 'Nguyễn Thu Hiền',
+            status: 'unlinked',
+            timestamp: '10:30 02/20/2025',
           },
         ];
 
@@ -119,7 +119,7 @@ const AccountManagement = (props: Props) => {
           hasMore.current = true;
         }
       } catch (error) {
-        console.log("error", error);
+        console.log('error', error);
       } finally {
         querying.current = false;
         gridRef.current?.hideOverlay();
@@ -128,7 +128,7 @@ const AccountManagement = (props: Props) => {
   };
 
   const refreshData = () => {
-    gridRef.current?.api?.setGridOption("rowData", []);
+    gridRef.current?.api?.setGridOption('rowData', []);
     lastRow.current = null;
     hasMore.current = false;
     querying.current = false;
@@ -137,7 +137,7 @@ const AccountManagement = (props: Props) => {
 
   const handleLinkAccount = () => {
     // TODO: Implement link account logic
-    console.log("Link account clicked");
+    console.log('Link account clicked');
   };
 
   return (

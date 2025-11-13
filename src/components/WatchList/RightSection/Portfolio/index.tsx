@@ -1,10 +1,10 @@
-"use client";
-import React, { useRef } from "react";
-import { ColDef } from "ag-grid-community";
-import DataGrid, { DataGridHandle } from "@/components/DataGrid";
-import IncreaseIcon from "@/svg/IncreaseIcon";
-import "./style.scss";
-import ActionCellRenderer from "./ActionCellRenderer";
+'use client';
+import React, { useRef } from 'react';
+import { ColDef } from 'ag-grid-community';
+import DataGrid, { DataGridHandle } from '@/components/DataGrid';
+import IncreaseIcon from '@/assets/svg/IncreaseIcon';
+import './style.scss';
+import ActionCellRenderer from './ActionCellRenderer';
 
 const Portfolio = () => {
   const gridRef = useRef<DataGridHandle | null>(null);
@@ -16,66 +16,66 @@ const Portfolio = () => {
 
   const columnDefs = useRef<Array<ColDef<any>>>([
     {
-      headerName: "Mã CK",
-      field: "symbol",
+      headerName: 'Mã CK',
+      field: 'symbol',
       minWidth: 105,
       maxWidth: 105,
-      headerClass: "header text-center",
-      cellClass: "cell text-center",
+      headerClass: 'header text-center',
+      cellClass: 'cell text-center',
     },
     {
-      headerName: "Giá mua TB",
-      field: "avgBuyPrice",
+      headerName: 'Giá mua TB',
+      field: 'avgBuyPrice',
       flex: 1,
       minWidth: 163,
-      headerClass: "header text-center",
-      cellClass: "cell text-center",
+      headerClass: 'header text-center',
+      cellClass: 'cell text-center',
     },
     {
-      headerName: "Giá TT",
-      field: "currentPrice",
+      headerName: 'Giá TT',
+      field: 'currentPrice',
       flex: 1,
       minWidth: 166,
-      headerClass: "header text-center",
-      cellClass: "cell text-center",
+      headerClass: 'header text-center',
+      cellClass: 'cell text-center',
     },
     {
-      headerName: "Khối lượng",
-      field: "volume",
+      headerName: 'Khối lượng',
+      field: 'volume',
       flex: 1,
       minWidth: 165,
-      headerClass: "header text-center",
-      cellClass: "cell text-center",
-      valueFormatter: (params) => {
-        if (params.value == null) return "";
-        return params.value.toLocaleString("en-US");
+      headerClass: 'header text-center',
+      cellClass: 'cell text-center',
+      valueFormatter: params => {
+        if (params.value == null) return '';
+        return params.value.toLocaleString('en-US');
       },
     },
     {
-      headerName: "% lãi/lỗ",
-      field: "profitLossPercent",
+      headerName: '% lãi/lỗ',
+      field: 'profitLossPercent',
       flex: 1,
       minWidth: 88,
-      headerClass: "header text-center",
-      cellClass: "cell text-center",
+      headerClass: 'header text-center',
+      cellClass: 'cell text-center',
       cellClassRules: {
-        "text-up": (params) => params.value > 0,
-        "text-down": (params) => params.value < 0,
+        'text-up': params => params.value > 0,
+        'text-down': params => params.value < 0,
       },
-      valueFormatter: (params) => {
-        if (params.value == null) return "";
-        const sign = params.value > 0 ? "+" : "";
+      valueFormatter: params => {
+        if (params.value == null) return '';
+        const sign = params.value > 0 ? '+' : '';
         return `${sign}${params.value}%`;
       },
     },
     {
-      headerName: "",
-      field: "action",
+      headerName: '',
+      field: 'action',
       flex: 1,
       minWidth: 80,
       maxWidth: 80,
-      headerClass: "header",
-      cellClass: "cell-action",
+      headerClass: 'header',
+      cellClass: 'cell-action',
       cellRenderer: ActionCellRenderer,
     },
   ]);
@@ -92,44 +92,44 @@ const Portfolio = () => {
         // Fake data - portfolio holdings
         const rowData: any[] = [
           {
-            symbol: "AAA",
-            avgBuyPrice: "8,000",
-            currentPrice: "7,500",
+            symbol: 'AAA',
+            avgBuyPrice: '8,000',
+            currentPrice: '7,500',
             volume: 100000,
             profitLossPercent: 20.3,
-            action: "buy",
+            action: 'buy',
           },
           {
-            symbol: "AAA",
-            avgBuyPrice: "8,000",
-            currentPrice: "7,500",
+            symbol: 'AAA',
+            avgBuyPrice: '8,000',
+            currentPrice: '7,500',
             volume: 100000,
             profitLossPercent: 20.3,
-            action: "buy",
+            action: 'buy',
           },
           {
-            symbol: "AAA",
-            avgBuyPrice: "8,000",
-            currentPrice: "7,500",
+            symbol: 'AAA',
+            avgBuyPrice: '8,000',
+            currentPrice: '7,500',
             volume: 100000,
             profitLossPercent: 20.3,
-            action: "buy",
+            action: 'buy',
           },
           {
-            symbol: "AAA",
-            avgBuyPrice: "8,000",
-            currentPrice: "7,500",
+            symbol: 'AAA',
+            avgBuyPrice: '8,000',
+            currentPrice: '7,500',
             volume: 100000,
             profitLossPercent: 20.3,
-            action: "buy",
+            action: 'buy',
           },
           {
-            symbol: "AAA",
-            avgBuyPrice: "8,000",
-            currentPrice: "7,500",
+            symbol: 'AAA',
+            avgBuyPrice: '8,000',
+            currentPrice: '7,500',
             volume: 100000,
             profitLossPercent: 20.3,
-            action: "sell",
+            action: 'sell',
           },
         ];
 
@@ -145,7 +145,7 @@ const Portfolio = () => {
           hasMore.current = true;
         }
       } catch (error) {
-        console.log("error", error);
+        console.log('error', error);
       } finally {
         querying.current = false;
         gridRef.current?.hideOverlay();
@@ -154,7 +154,7 @@ const Portfolio = () => {
   };
 
   const refreshData = () => {
-    gridRef.current?.api?.setGridOption("rowData", []);
+    gridRef.current?.api?.setGridOption('rowData', []);
     lastRow.current = null;
     hasMore.current = false;
     querying.current = false;

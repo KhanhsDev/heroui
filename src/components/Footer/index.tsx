@@ -4,11 +4,11 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Link } from '@heroui/link';
 
-import PhoneIcon from '@/svg/PhoneIcon';
-import MailIcon from '@/svg/MailIcon';
-import MapPinIcon from '@/svg/MapPinIcon';
-import ChevronDownIcon from '@/svg/ChevronDownIcon';
-import CopyrightIcon from '@/svg/CopyrightIcon';
+import PhoneIcon from '@/assets/svg/PhoneIcon';
+import MailIcon from '@/assets/svg/MailIcon';
+import MapPinIcon from '@/assets/svg/MapPinIcon';
+import ChevronDownIcon from '@/assets/svg/ChevronDownIcon';
+import CopyrightIcon from '@/assets/svg/CopyrightIcon';
 
 export default function Footer() {
   const [isExpanded, setIsExpanded] = useState(false);

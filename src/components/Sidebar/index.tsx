@@ -9,11 +9,11 @@ import { Link } from '@heroui/link';
 
 import { Modal, ModalContent, useDisclosure } from '@heroui/modal';
 
-import HomeIcon from '@/svg/HomeIcon';
-import ShoppingBagIcon from '@/svg/ShoppingBagIcon';
-import CommandIcon from '@/svg/CommandIcon';
-import Extend from '@/svg/Extend';
-import ChevronRightIcon from '@/svg/ChevronRightIcon';
+import HomeIcon from '@/assets/svg/HomeIcon';
+import ShoppingBagIcon from '@/assets/svg/ShoppingBagIcon';
+import CommandIcon from '@/assets/svg/CommandIcon';
+import Extend from '@/assets/svg/Extend';
+import ChevronRightIcon from '@/assets/svg/ChevronRightIcon';
 import Subscription from '../Subscription';
 import Payment from '../Payment';
 import UpdatePackage from '../UpdatePackage';

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import EmptyLinkedAccountBgIcon from "@/svg/EmptyLinkedAccountBgIcon";
-import EmptyLinkedAccountIcon from "@/svg/EmptyLinkedAccountIcon";
+import EmptyLinkedAccountBgIcon from '@/assets/svg/EmptyLinkedAccountBgIcon';
+import EmptyLinkedAccountIcon from '@/assets/svg/EmptyLinkedAccountIcon';
 
 interface EmptyLinkedAccountProps {
   onAddAccount?: () => void;

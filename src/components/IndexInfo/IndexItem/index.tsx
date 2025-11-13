@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import MinuteChart from "@/components/MinuteChart";
-import ChevronDownIcon from "@/svg/ChevronDownIcon";
-import ArrowUpLargeIcon from "@/svg/ArrowUpLargeIcon";
-import ArrowDownLargeIcon from "@/svg/ArrowDownLargeIcon";
+import { useState } from 'react';
+import MinuteChart from '@/components/MinuteChart';
+import ChevronDownIcon from '@/assets/svg/ChevronDownIcon';
+import ArrowUpLargeIcon from '@/assets/svg/ArrowUpLargeIcon';
+import ArrowDownLargeIcon from '@/assets/svg/ArrowDownLargeIcon';
 
 export default function IndexItem() {
   // TODO: Sẽ lấy từ API sau
-  const [indexName] = useState("VN-INDEX");
-  const [indexValue] = useState("1224.64");
-  const [indexChange] = useState("0.51");
-  const [indexChangePercent] = useState("0.12");
-  const [totalValue] = useState("309.32tr");
-  const [totalVolume] = useState("239,024,235");
-  const [upCount] = useState("32");
-  const [upCountChange] = useState("7");
-  const [ceilCount] = useState("80");
-  const [downCount] = useState("34");
-  const [downCountChange] = useState("6");
-  const [sessionType] = useState("Phiên ATC");
+  const [indexName] = useState('VN-INDEX');
+  const [indexValue] = useState('1224.64');
+  const [indexChange] = useState('0.51');
+  const [indexChangePercent] = useState('0.12');
+  const [totalValue] = useState('309.32tr');
+  const [totalVolume] = useState('239,024,235');
+  const [upCount] = useState('32');
+  const [upCountChange] = useState('7');
+  const [ceilCount] = useState('80');
+  const [downCount] = useState('34');
+  const [downCountChange] = useState('6');
+  const [sessionType] = useState('Phiên ATC');
 
   const isPositive = parseFloat(indexChange) >= 0;
 
@@ -59,13 +59,13 @@ export default function IndexItem() {
         <div className="flex items-center">
           <div
             className={
-              isPositive ? "text-[var(--index-up)]" : "text-[var(--index-down)]"
+              isPositive ? 'text-[var(--index-up)]' : 'text-[var(--index-down)]'
             }
           >
             {isPositive ? <ArrowUpLargeIcon /> : <ArrowDownLargeIcon />}
           </div>
           <span
-            className={`text-[1.5rem] font-[400] leading-[1.4] ${isPositive ? "text-[var(--index-up)]" : "text-[var(--index-down)]"}`}
+            className={`text-[1.5rem] font-[400] leading-[1.4] ${isPositive ? 'text-[var(--index-up)]' : 'text-[var(--index-down)]'}`}
           >
             <span className="font-[600]">{indexValue} </span>
             <span>
@@ -117,7 +117,7 @@ export default function IndexItem() {
             <div className="w-[0.8rem] h-[0.8rem] bg-[var(--index-ceiling)] rounded-[0.4rem]" />
           </div>
           <span className="text-[1.4rem] font-[500] leading-[1.4] text-[var(--index-ceiling)]">
-            {" "}
+            {' '}
             {ceilCount}
           </span>
         </div>

@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import PhoneIcon from '@/svg/PhoneIcon';
-import MailIcon from '@/svg/MailIcon';
-import LogOutIcon from '@/svg/LogOutIcon';
-import UpdatePackage from '../UpdatePackage';
-
+import PhoneIcon from '@/assets/svg/PhoneIcon';
+import MailIcon from '@/assets/svg/MailIcon';
+import LogOutIcon from '@/assets/svg/LogOutIcon';
+import ShoppingCart from '@/assets/svg/ShoppingCart';
+import { formatNumber } from '@/utils/common';
 type Props = {
   onLogout?: () => void;
 };
@@ -16,13 +16,8 @@ export default function Profile({ onLogout }: Props) {
   const [userName] = useState('Bùi Văn Khánh');
   const [userPlan] = useState('Tiêu chuẩn');
   const [userPhone] = useState('0392672182');
-  const [userEmail] = useState('buivankhanh2k4.com');
+  const [userEmail] = useState('buivankhanh2k4@gmail.com');
   const [avatarUrl] = useState('/assets/png/profile-avatar.png');
-
-  const handleRenewClick = () => {
-    // TODO: Xử lý gia hạn gói
-    console.log('Renew package clicked');
-  };
 
   const handleLogout = () => {
     if (onLogout) {
